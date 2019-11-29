@@ -3,8 +3,9 @@ import csv
 from matplotlib import pyplot as plt
 
 #Read IR csv
-filename = 'standard.CSV'
-with open(filename) as f:
+print("Please enter a filename of IR data CSV :")
+filename = input()
+with open(filename+'.CSV') as f:
     reader = csv.reader(f)
 
     wavenums = []
@@ -30,4 +31,4 @@ plt.ylim(0, 100)
 ax=plt.gca()
 ax.invert_xaxis()
 
-plt.savefig("test.pdf", dpi =600, format="pdf")
+plt.savefig(filename+".pdf", dpi =600, format="pdf")
